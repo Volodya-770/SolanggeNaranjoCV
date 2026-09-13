@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-lora), Georgia, Cambria, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --color-paper: #FAFAF9;
+  --color-ink: #27272A;
+  --color-forest: #3F6242;
+  --color-forest-hover: #2E4A31;
+  --color-forest-soft: #EEF4EF;
+  --color-muted: #52525B;
+  --color-subtle: #71717A;
+  --color-line: #E4E4E7;
+}
+
+:root {
+  --bg-primary: #FAFAF9;
+  --text-primary: #27272A;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #FAFAF9;
+  color: #27272A;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+/* Custom selection */
+::selection {
+  background-color: #3F6242;
+  color: #FAFAF9;
+}
+
+/* Print optimizations */
+@media print {
+  @page {
+    margin: 1.5cm 1.5cm;
+    size: letter;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #18181B !important;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-clean {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .page-break-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}
